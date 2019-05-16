@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <title>Document</title>
+
+    <style> 
+        #body_div{
+            display: flex;
+            
+            justify-content: center;
+            margin-top: 350px;
+        }    
+
+        #star-six {
+                width: 0;
+                height: 0;
+                border-left: 50px solid transparent;
+                border-right: 50px solid transparent;
+                border-bottom: 100px solid red;
+                position: relative;
+                
+            }
+#star-six:after {
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-top: 100px solid red;
+	position: absolute;
+	content: "";
+	top: 30px;
+	left: -50px;
+}
+        
+    </style>
+
+</head>
+<body>
+    <div id="body_div">
+    <div  id="star-six" >
+        
+    </div>
+    </div>
+    <script>
+        //при клике
+        $("#star-six").click(function(){
+            //анимация исчезновения звезды
+                $("#star-six").animate(
+                    {
+                        opacity: 0.4
+                    },
+                    1000);
+            //вернем прозрачность 
+                $("#star-six").animate(
+                    {
+                        opacity: 1
+                    },
+                    1000
+                );
+            });
+        
+    </script>
+
+
+</body>
+</html>
